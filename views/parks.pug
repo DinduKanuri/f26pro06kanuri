@@ -12,9 +12,16 @@ block content
   
   div.container-fluid
     div.row
-      each park in results
-        div.col-sm-2
+      each park, index in results
+        div.col-sm-2(onclick=`buy(${index})`)
           h5 #{park.park_name}
           p State: #{park.state}
           p Area: #{park.area_acres} acres
+        
+  
+  script.
+    function buy(index) {
+      alert(`You purchased item ${index}`);
+    }
+
 
